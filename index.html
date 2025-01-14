@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aljabar Linear bu Yulis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mata Kuliah Aljabar Linear</h1>
+        <p>Dokumentasi pembelajaran mata kuliah Aljabar Linear Semester 1 - Disusun oleh Azzahra | Dosen Pengampu: Ibu Yulis Nuryanti, M.Kom</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#matriks">Matriks</a></li>
+            <li><a href="#determinan">Determinan</a></li>
+            <li><a href="#eliminasi">Eliminasi Gauss-Jordan</a></li>
+            <li><a href="#invers">Invers Matriks</a></li>
+            <li><a href="#grafik">Komputer Grafik</a></li>
+            <li><a href="#kriptografi">Kriptografi</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="matriks" class="hidden"> 
+            <h2>Matriks</h2>
+            <section class="video-section">
+                <h3>Video Pengerjaan</h3>
+                <div class="video-container">
+                    <video width="640" height="360" controls>
+                        <source src="matriks.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="matriks.mp4">di sini</a>.
+                    </video>
+                </div> 
+                <p><b>Matriks Penjumlahan, Pengurangan & Perkalian </b></p>
+            </section>
+            <section class="explanation">
+                <p>Matriks itu kotak berisi angka yang diatur dalam baris dan kolom. ada 3 jenis operasi matriks</p>
+                <p> 1.2 Penjumlahan & Pengurangan: Caranya, cukup jumlahkan atau kurangkan angka-angka yang ada di posisi yang sama. </p>
+                <p>3. Perkalian Matriks: Perlu cara khusus! Perkalian matriks mengalikan elemen baris dari matriks pertama dengan elemen kolom dari matriks kedua, lalu dijumlahkan. Hasil akhirnya adalah matriks baru.
+                </p><a href="Matriks.pdf">Sumber Materi</a> </section>
+            <section class="sample-problem">
+                <h3>Contoh Soal</h3>
+                <div class="problem-container">
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>1. Hitunglah hasil dari A-Z:</p>
+                            <pre>
+A = | 6  5 |
+    | 3  1 |
+                    
+Z = | 2  4 |
+    | 1  2 |
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+A - Z = | 4  1 |
+        | 2 -1 |
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>2. Hitunglah hasil M + N:</p>
+                            <pre>
+M = | 4  5 |
+    | 3  8 |
+                    
+N = | 2  3 |
+    | 1  7 |
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+M + N = | 6   8 |
+        | 4  14 |
+                            </pre>
+                        </div>
+                    </div>
+               
+            
+
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>3. berapakah nilai elemen di baris kedua kolom pertama dari hasil P + Q?</p>
+                        <pre>
+P = | 5  2 |
+    | 3  7 |
+
+Q = | 4  1 |
+    | 2  6 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+5
+                        </pre>
+                    </div>
+                </div>
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>4. Hitunglah A + B - C:</p>
+                        <pre>
+A = | 6  3 |
+    | 4  5 |
+                 C= | 1  2 | 
+B = | 2  1 |        | 0  3 |
+    | 3  2 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+A + B - C = | 7  2 |
+            | 7  4 |
+                        </pre>
+                    </div>
+                </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>5. Tentukan hasil dari J – K + L, dengan matriks:</p>
+                        <pre>
+J = | 5  8 |
+    | 6  7 |
+                 L= | 2  1 |  
+K = | 1  3 |        | 3  5 |
+    | 4  2 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+J – K + L = | 6   6  |
+            | 5  10  |
+                        </pre>
+                    </div>
+                </div>
+           
+        <div class="problem-box">
+                <div class="matriks-equation">
+                    <div class="matriks-steps">
+                    <p>6. Berapakah hasil dari...</p>
+                    <pre>
+| 1  -7 |   | 5  -3  8 |
+          x
+| 5  9  |   | 0   2 -1 |
+       
+                    </pre>
+                </div>
+                <div class="solution">
+                    <div class="matriks-equation">
+                    <div class="matriks-steps">
+                    <p><strong> Jawaban:</strong></p>
+                    <pre>
+    | 1  -7 |   | 5  -3  8 |
+              x
+    | 5  9  |   | 0   2 -1 |
+        
+= |1x5 + (-7) x 0  1 x -3 + (-7)x 2  1x8 + (-7) x -1 |
+  |5x5 + 9 x 0     5 x -3 + 9 x 2    5x8 + 9 x -1    |
+
+= |5  -17  15 |
+  |25  3   31 |
+                    </pre>
+               </div> </div></div></div>
+            </div>
+        
+            <div class="problem-box">
+                <div class="problem">
+                    <p>7. Hitunglah hasil dari P x Q:</p>
+                    <pre>
+    | -3  1 |      | 2  1 |
+P =           Q = 
+    | 4  2  |      | 5  0 | 
+                           
+    </pre>
+</div>
+<div class="solution">
+    <p><strong>Jawaban:</strong></p>
+    <pre>
+PQ=| -3  1 |  x  | 2  1 |
+   |  4  2 |  x  | 5  0 |
+
+=  | (-3 x 2) + (1 x 5)  (-3 x 1) + (1 x 0) |
+   | ( 4 x 2) + (2 x 5)  ( 4 x 1) + (2 x 0) |
+
+=  | -6 + 5  -3 + 0 |
+   |  8 + 10  4 + 0 |
+
+=  | -1  -3 |
+   | 18  4  |
+    </pre>
+</div>
+            </div>   
+            
+            <div class="problem-box">
+                <div class="problem">
+                    <p>8. Berapakah hasil dari...</p>
+                    <pre>
+    | 2  -1 |   | -2  0  2 |
+              x
+    | 3   0 |   |  3  1  0 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+    | 2  -1 |   | -2  0  2 |
+              x
+    | 3   0 |   |  3  1  0 |
+
+=   |2 x -2 + (-1)x3   2x0 + (-1) x 1   2x2 + (-1) x 0 |
+    |3 x -2 +   0 x3   3x0 +   0  x 1   3x2 +   0  x 0 |
+
+=   |-4 + (-3)  0 + (-1)  4 + 0 |
+    |-6 +   0   0 +   0   6 + 0 |
+
+=   |-7  -1  4 |
+    |-6   0  6 |
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>9. Berapakah nilah X = Y yang memenuhi…</p>
+                    <pre>
+    | x   1 |   | 3  2 |     | 7   4|
+              x           =
+    |-1   y |   | 1  0 |     |-3  -2|
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+    | x   1 |   | 3  2 |     |3x + 1   2x|
+              x           =
+    |-1   y |   | 1  0 |     |-3 + y   -2|
+    
+    
+           |3x + 1   2x|     |7    4|
+                          =
+           |-3 + y   -2|     |-3  -2|
+
+Sesuaikan persamaan terhadap posisi elemen, didapat:
+3x + 1 = 7 -> x = 2 dan -3 -> y = 0
+
+jadi, x + y = 2 + 0 = 2
+                    </pre>
+                </div>
+            </div>
+       
+        <div class="problem-box">
+            <div class="problem">
+                <p>10. Hitunglah hasil matriks perkalian dari matriks A dan B: </p>
+                <pre>
+    | 3  4 |      | 7  5 |
+A=            B = 
+    | 1  2 |      | 6  4 |
+
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+A x B = | 3   4 |    | 7  5 |
+                  x
+        | 1   2 |    | 6  4 |
+
+      = | 3x7 + 4x6  3x5 + 4x4 |
+        | 1x7 + 2x6  1x5 + 2x4 |    
+
+      = | 21 + 24  15 + 16 |
+        | 7  + 12   5 + 8  |
+
+      = | 45  31 |
+        | 19  13 |
+                </pre>
+            </div>
+        </div>
+
+        <div class="problem-box">
+            <div class="problem">
+                <p>11. Tentukan hasil matriks perkalian dari ordo 3 x 3 berikut:</p>
+                <pre>
+     | 1  2  3 |     |9  8  7 |
+ A = | 4  5  6 |  B= |6  5  4 |
+     | 7  8  9 |     |3  2  1 |
+    
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+   | 1  2  3 |     |9  8  7 |
+A= | 4  5  6 |  B= |6  5  4 |
+   | 7  8  9 |     |3  2  1 |
+
+= | 1x9 + 2x6 + 3x3  1x8 + 2x5 + 3x2  1x7 + 2x4 + 3x1 |
+  | 4x9 + 5x6 + 6x3  4x8 + 5x5 + 6x2  4x7 + 5x4 + 6x1 |
+  | 7x9 + 8x6 + 9x3  7x8 + 8x5 + 9x2  7x7 + 8x4 + 9x1 |
+
+= | 9 + 12 + 9  8 + 10 + 6  7 + 8 + 3 |
+  | 36 + 30 + 18  32 + 25 + 12  28 + 20 + 6 |
+  | 63 + 48 + 27  56 + 40 + 18  49 + 32 + 9 |
+
+= | 30  24  18 |
+  | 84  69  54 |
+  |138 114  90 |    
+                </pre>
+            </div>
+        </div>   
+
+        <div class="problem-box">
+            <div class="problem">
+            <p>12. Hitunglah hasil dari...</p>
+                <pre>
+| 1  2 |     | 3  2 |
+          X  
+| 1  3 |     | 4  1 |
+            </pre></div>
+            <div class="solution">
+            <p><strong>Jawaban:</strong></p>
+                <pre>
+| 1  2 |     | 3  2 |
+          X  
+| 1  3 |     | 4  1 |
+
+= | 1x3 + 2x4  1x2 + 2x1 |
+  | 1x3 + 3x4  1x2 + 3x1 |
+
+= | 3 + 8  2 + 2 |
+  | 3 + 12  2 + 3 |
+
+= | 11  4 |
+  | 15  5 |
+                </pre>
+            </div>
+            </div> </div>
+        </section></section>
+        </section>        
+
+        <section id="determinan" class="hidden">
+            <h2>Determinan Matriks</h2>
+            <section class="video-section">
+                <h3>Video Pengerjaan</h3>
+                <div class="video-container">
+                    <video width="640" height="360" controls>
+                        <source src="determinan.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="determinan.mp4">di sini</a>.
+                    </video>
+                </div>
+                <p>Determinan | Ordo 2x2 3x3 | Minor kofaktor </p>
+            </section>
+            <section class="explanation">
+                <p>Well, zara mulai dari cara mencari determinan matriks terlebih dahulu. Kenapa? Soalnya, untuk mencari invers matriks, kita perlu mencari determinan matriksnya lebih dulu. </p>
+                Determinan adalah nilai yang dapat dihitung dari unsur-unsur suatu matriks persegi.
+                <p>  Determinan Matriks itu ada 2 jenis Ordo. Ordo 2x2 dan ordo 3x3</p> 
+                <p>  di Determinan Matriks Ordo 3x3 ada 2 cara. 1. Aturan Sarrus 2. Metode  Minor Kofaktor</p>
+            <a href="Determinan.pdf">Sumber Materi</a>
+        </section>
+            <section class="sample-problem">
+                <h3>Contoh Soal</h3>
+                <div class="problem-container">
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>hitunglah determinan matriks ordo 2x2 dibawah:</p>
+                            <pre>
+det A = | 9  -11 |
+        | 0   3  |
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+(9 x 3)-(0 x (-11)) = <b>27 </b>
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>hitunglah determinan matriks ordo 3x3: (aturan sarrus) dibawah:</p>
+                            <pre>
+Matriks A = | 4  2  8 | 4 2
+            | 2  1  5 | 2 1
+            | 3  2  4 | 3 2
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+det A = 4.1.4 + 2.5.3 + 8.2.2 - 8.1.3 - 4.5.2 - 2.2.4
+det A = 16 + 30 + 32 - 24 - 40 - 16 =<b> -2</b> 
+                            </pre>
+                        </div>
+                    </div>
+ 
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>hitunglah determinan matriks ordo 3x3: (minor kofaktor) dibawah:</p>
+                        <pre>
+Matriks A = | 4  2  8 | 
+            | 2  1  5 | 
+            | 3  2  4 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+det <b>A</b>= a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub>
+1.<b>Elemen </b> a<sub>11</sub> <b>(4)</b>= 1.4 - 5.2 = 4-10 = <b>-6</b>
+2.<b>Elemen </b> a<sub>12</sub> <b>(2)</b>= 2.4 - 5.3 = 8-15 = <b>-7</b>
+3.<b>Elemen </b> a<sub>13</sub> <b>(8)</b>= 2.2 - 1.3 = 4-3 = <b>1</b>
+
+det <b>A</b>= a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub>
+     = 4.(-6) + 2.(-7) + 8.1
+     =-24 + 14 + 8 = <b>-2 </b>
+     
+<b><i>//</b> Tanda kofaktor ditentukan oleh (−1)<sup>i+j</sup>, di mana:
+i adalah nomor baris elemen.
+j adalah nomor kolom elemen.Untuk pangkat ganjil, hasilnya -1 || Untuk pangkat genap, hasilnya +1. </i>  
+                        </pre>
+                    </div>
+                </div>
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>hitunglah determinan matriks ordo 2x2 dibawah:</p>
+                        <pre>
+A = | 2  5 |
+    | 4  3 |
+                
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+det A = | 2  5 | = (2 x 3) - (5 x 4) = 6 - 20 = <b>-14</b>
+        | 4  3 |
+                        </pre>
+                    </div>
+                </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>hitunglah determinan matriks ordo 3x3: (aturan sarrus) dibawah:</p>
+                        <pre>
+    | 1  2  3 |             |1  2  3 | 1  2
+A = | 2  1  4 | -> det(A) = |2  1  4 | 2  1
+    | 3  1  2 |             |3  1  2 | 3  1
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+det(A) = 1.1.2 + 2.4.3 + 3.2.1 – 3.1.3 – 1.4.1 – 2.2.2 = 2 + 24 + 6 – 9 – 4 – 8 = <b>11 </b>
+                        </pre>
+                    </div>
+                </div>
+           
+            <div class="problem-box">
+                <div class="problem">
+                    <p>hitunglah determinan matriks ordo 3x3: (minor kofaktor) dibawah:</p>
+                    <pre>
+A = | 1  2  3 |
+    | 2  1  4 |
+    | 3  1  2 | 
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+det <b>A</b> = a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub> 
+1. <b>Elemen </b> a<sub>11</sub> <b>(1)</b> = (1.2) - (4.1) = 2 - 4 = <b>-2</b> 
+2. <b>Elemen </b> a<sub>12</sub> <b>(2)</b> = (2.2) - (4.3) = 4 - 12 =<b>-8</b> 
+3. <b>Elemen </b> a<sub>13</sub> <b>(3)</b> = (2.1) - (3.1) = 2 - 3 = <b>-1</b>
+
+det <b>A</b> = a<sub>11</sub> C<sub>11</sub> + a<sub>12</sub> C<sub>12</sub> + a<sub>13</sub> C<sub>13</sub>
+     = 1.(-2) + 2.(-8) + 3.(-1)
+     = -2 + 16 - 3 = <b>11</b>
+
+<b><i>//</b> Tanda kofaktor ditentukan oleh (−1)<sup>i+j</sup>, di mana:
+i adalah nomor baris elemen.
+j adalah nomor kolom elemen.Untuk pangkat ganjil, hasilnya -1 || Untuk pangkat genap, hasilnya +1. </i>  </pre>
+                </div>
+            </div>   
+            
+            <div class="problem-box">
+                <div class="problem">
+                    <p>hitunglah determinan matriks ordo 2x2 dibawah:</p>
+                    <pre>
+A = | 3  5 |
+    | 4  8 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+det A = | 3  5 | = (3 x 8) - (5 x 4) = 24 - 20 = <b>4</b>
+        | 4  8 |
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>hitunglah determinan matriks ordo 3x3: (aturan sarrus) dibawah:</p>
+                    <pre>
+A = | 1  2  3| 1  2
+    | 4  5  6| 4  5
+    | 7  8  9| 7  8
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+det A = 1.5.9 + 2.6.7 + 3.4.8 - 3.5.7 - 1.6.8 - 2.4.9 = 45 + 84 + 96 - 105 - 48 - 72 = <b>0</b>
+                    </pre>
+                </div>
+            </div>
+       
+        <div class="problem-box">
+            <div class="problem">
+                <p>hitunglah determinan matriks ordo 3x3: (Minor Kofaktor) dibawah:</p>
+                <pre>
+A = | 1  2  3| 
+    | 4  5  6| 
+    | 7  8  9| 
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+det <b>A</b> = a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub>
+1. <b>Elemen </b> a<sub>11</sub> <b>(1)</b> = (5.9) - (6.8) = 45 - 48 = <b>-3</b>
+2. <b>Elemen </b> a<sub>12</sub> <b>(2)</b> = (4.9) - (6.7) = 36 - 42 = <b>-6</b>
+3. <b>Elemen </b> a<sub>13</sub> <b>(3)</b> = (4.8) - (5.7) = 32 - 35 = <b>-3</b>
+
+det <b>A</b> = a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub>
+det <b>A</b> = 1.(-3) + 2.(-6) + 3.(-3) = -3 + 12 + (-9) = <b>0</b>
+
+<b><i>//</b> Tanda kofaktor ditentukan oleh (−1)<sup>i+j</sup>, di mana:
+i adalah nomor baris elemen.
+j adalah nomor kolom elemen.Untuk pangkat ganjil, hasilnya -1 || Untuk pangkat genap, hasilnya +1. </i>  </pre>    
+                </pre>
+            </div>
+        </div>
+
+        <div class="problem-box">
+            <div class="problem">
+                <p>hitunglah determinan matriks ordo 2x2 dibawah:</p>
+                <pre>
+A = | -7  2 |
+    | 3   2 |
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+det A = (-7).2 - 3.2 = -14 - 6 = <b>-20</b>
+                </pre>
+            </div>
+        </div>    
+        
+        <div class="problem-box">
+            <div class="problem">
+                <p>hitunglah determinan matriks ordo 3x3: (aturan sarrus) dibawah:</p>
+                <pre>
+A = | 2  1  3 | 2 1
+    | 4  5  6 | 4 5
+    | 7  8  9 | 7 8
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+det A = 2.5.9 + 1.6.7 + 3.4.8 = 90 + 42 + 96 = <b>228</b> 3.5.7 - 2.6.8 - 1.4.9 = 105 + 96 + 36 = <b>237 </b>
+<b>det A = 228 - 237 = -9</b>
+
+                </pre>
+            </div>
+        </div>   
+        
+        <div class="problem-box">
+            <div class="problem">
+                <p>hitunglah determinan matriks ordo 3x3: (minor kofaktor) dibawah:</p>
+                <pre>
+A = | 2  1  3 | 
+    | 4  5  6 | 
+    | 7  8  9 | 
+                </pre>
+            </div>
+            <div class="solution">
+                <p><strong>Jawaban:</strong></p>
+                <pre>
+det <b>A</b> = a<sub>11</sub>.C<sub>11</sub> + a<sub>12</sub>.C<sub>12</sub> + a<sub>13</sub>.C<sub>13</sub>
+1. <b>Elemen </b> a<sub>11</sub> <b>(2)</b> = (5.9) - (6.8) = 45 - 48 = <b>-3</b>
+2. <b>Elemen </b> a<sub>12</sub> <b>(1)</b> = (4.9) - (6.7) = 36 - 42 = <b>-6</b>
+3. <b>Elemen </b> a<sub>13</sub> <b>(3)</b> = (4.8) - (5.7) = 32 - 35 = <b>-3</b>
+
+det <b>(A)</b>= (2)(-3) - (1)(-6) + (3)(-3) = -6 + 6-9 = <b>-9</b>
+
+<b><i>//</b> Tanda kofaktor ditentukan oleh (−1)<sup>i+j</sup>, di mana:
+    i adalah nomor baris elemen.
+    j adalah nomor kolom elemen.Untuk pangkat ganjil, hasilnya -1 || Untuk pangkat genap, hasilnya +1. </i>  </pre>
+                </pre>
+            </div>
+        </div>   
+        
+            </div> </div>
+        </section></section>
+        </section>        
+
+        <section id="eliminasi" class="hidden">
+                <h2>Eliminasi Gauss-Jordan</h2>
+                <section class="video-section">
+                    <h3>Materi Video</h3>
+                    <div class="video-container">
+                        <video width="640" height="360" controls>
+                            <source src="eliminasi.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="determinan.mp4">di sini</a>.
+                        </video>
+                    </div>
+                    <p>Metode Eliminasi Gauss adalah cara untuk menyelesaikan sistem persamaan linear dengan mengubah matriks menjadi bentuk yang lebih sederhana (disebut bentuk segitiga). Ciri-ciri</p>
+
+                       <ul>1. Jika suatu baris tidak nol semua nol, maka bilangan pertama yang tidak nol adalah 1 atau I utama (pada baris pertama, kolom pertama)</ul>
+                       <ul>2. Baris nol terletak paling bawah</ul>
+                       <ul>3. 1 utama berikutnya berada di kanan 1 utama baris di atasnya ( pada baris ke-2, kolom ke-2)</ul>
+                       <ul>4. Di bawah 1 utama harus 0 dan dibawah 0 harus 0 0 </ul>
+                       <p> <a href="Eliminasi.pdf">Sumber materi</a></p>
+                </section>
+                <section class="sample-problem">
+                    <h3>Contoh soal</h3>
+                    <div class="problem-container">
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                                <pre>
+2x + 3y - z = 6
+x + 2y - 4z = 8
+x + y + 4z = 4
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Pembahasan:</strong></p>
+                                <pre>
+Pertama: ubah sistem persamaan linier menjadi matriks
+| 2  3 -1 |   | x |   | 6 |
+| 1  2 -4 | x | y |   | 8 |
+| 1  1  4 |   | z |   | 4 |
+kedua: ubah Baris pertama dan kolom pertama menjadi 1
+| 1  1  3  |   | x |   | -2 |
+| 0  1 -7  | x | y |   | 10 |
+| 1  1  4  |   | z |   | 4 |
+karna baris kedua depannya sudah 0 jdi lanjut ke baris ketiga ubah jd 1
+| 1  1  3  |   | x |   | -2 |
+| 0  1 -7  | x | y |   | 10 |
+| 0  0  1  |   | z |   | 6 | sudah diketahui nilai <b>Z = 6</b>
+
+cari nilai Y      cari nilai X
+y-7z = 10         x + y + 3z = -2
+y-7(6) = 10       x + 52 + 3(6) = -2
+y-42 = 10         x + 52 + 18 = -2 
+<b>Y = 52</b>            x + 70 = -2 => <b>X = -72 </b>
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                                <pre>
+3x + y + z = 7
+x - y + 2z = 4
+2x + 2y - z = 3
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Pembahasan:</strong></p>
+                                <pre>
+<b>Pertama: Hilangkan x dari (2) dan (3)</b>
+Dari (2)(x − y + 2 z = 4), substitusi x=(7 − y − z)/3 (dari Persamaan 1).
+
+Substitusi ke (2):
+
+7 − y − z 
+--------- − y + 2 z = 4
+    3
+Kalikan semuanya dengan 3 untuk menghilangkan pecahan:
+
+(7 − y − z) − 3y + 6z = 12
+7 − 4 y + 5 z = 1 2 ⇒ − 4 y + 5 z = 5 ⇒ 4 y − 5 z = − 5  (Persamaan 4)
+
+Substitusi ke (3):
+  7 − y − z
+2(----------) + 2y − z = 3
+      3 
+
+Kalikan dengan 3: 
+2 (7 − y − z) + 6y − 3z = 9
+14 − 2y − 2z + 6y − 3z = 9
+4y − 5z = −5 (ini sama dengan Persamaan 4).
+
+<b>kedua: Selesaikan untuk y dan z </b>
+
+Dari (4), kita sudah memiliki persamaan dengan dua variabel:
+4y − 5z = −5
+
+Ambil nilai z = 3 untuk mempermudah:
+4y−5(3)=−5
+4y−15=−5⇒4y=10⇒y=2
+
+<b>ketiga: Substitusi </b>
+y=2 dan z=3 ke (1)
+Dari (1):
+
+3x+y+z=7
+3x+2+3=7
+3x+5=7⇒3x=2⇒x=−1
+
+<b>Jawaban Akhir: </b>
+x=−1,y=2,z=3
+                                </pre>
+                            </div>
+                        </div>
+
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                            <pre>
+x + 4y + z = 11
+2x + y + 3z = 14
+3x + 2y + 2z = 13
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Pembahasan:</strong></p>
+                            <pre>
+<b>Pertama: Hilangkan variabel x </b>
+Eliminasi x dari Persamaan (1), (2), dan (3).
+Kali (1) dengan 2 agar x dapat dieliminasi dengan (2):                       
+2 (x + 4y + z) = 2(11)
+2x + 8y + 2z = 22 <i>(4)</i>
+
+Kurangi Persamaan (4) dengan Persamaan (2):
+(2x + 8y + 2z) − (2x + y + 3z) = 22 − 14
+7y − z = 8 <i>(5)</i>
+                               
+Kali (1) dengan 3 agar x dapat dieliminasi dengan (3):
+3 (x + 4y + z) = 3 (11)
+3x + 12y + 3z = 33 <i>(6)</i>
+
+Kurangi Persamaan (6) dengan Persamaan (3):
+(3x + 12y + 3z) − (3x + 2y + 2z) = 33 − 13
+10y + z = 20 <i>(7)</i>
+
+<b>Kedua: Selesaikan sistem dua variabel (y dan z)</b>
+Eliminasi z dari (5) dan (7).
+Kali (5) dengan 10 dan (7) dengan 7 agar nilai z setara:
+10 (7y − z) = 10(8)  ⇒ 70y − 10z = 80 <i>(8)</i>
+7 (10y + z) = 7(20)  ⇒ 70y + 7z = 140 <i>(9)</i>
+
+Kurangi Persamaan (9) dari Persamaan (8):
+(70y − 10z) − (70y + 7z) = 80 − 140
+−17z = −60  ⇒ <b>z</b> = <u>60</u> <b>= 3.53</b>
+                   17
+
+Substitusi z ≈ 3.53 ke Persamaan (5):
+7y − (3.53) = 8
+7y = 8 + 3.53 ⇒ 7y = <u>1.53</u> ⇒ <b>y ≈ 1.65</b>
+                       7
+
+<b>Ketiga: Cari nilai X</b> 
+Substitusi y≈1.65 dan z≈3.53 ke Persamaan (1):
+x + 4 (1.65) + (3.53) = 11
+x + 6.6 + 3.53 = 11
+x + 10.13 = 11 ⇒ x = 11 − 10.13 ⇒ <b>x ≈ 0.87</b>
+
+Jawaban Akhir:
+x ≈ 0.87, y ≈ 1.65, z ≈ 3.53
+
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                            <pre>
+4x - y + z = 5
+x + y + z = 8
+3x - 2y + 4z = 12
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Pembahasan:</strong></p>
+                            <pre>
+Dari persamaan (2):
+x + y + z = 8  ⟹ z = 8 − x − y (4)
+
+<b>Pertama: Substitusi z dari (4) ke (1):</b>
+4x − y + (8 − x − y) = 5
+4x − y + 8 − x − y = 5
+3x − 2y = −3  ⟹ y = <u>3x+3</u>
+                        2        ​
+ 
+<b>Kedua: Substitusi z dari (4) ke (3):</b>
+3x − 2y + 4 (8 − x − y) = 12
+3x − 2y + 32 − 4x − 4y = 12
+−x − 6y = −20  ⟹ x + 6y = 20 (6)
+
+<b>Ketiga: Substitusi y dari (5) ke (6):</b>
+     (3x + 3) 
+x + 6 ------ = 20
+        2
+x + 9x + 9 = 20
+10x = 11  ⟹ x = 1.1
+
+<b>Kempat: Substitusi x = 1.1 ke (5):</b>
+    3(1.1) + 3   6.3
+y = ---------- = --- = 3.15
+        2         2
+
+Substitusi x dan y ke (4):
+z = 8 − x − y = 8 − 1.1 − 3.15 = 3.75
+
+Hasil Akhir:
+x = 1.1, y = 3.15, z = 3.75
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                            <pre>
+5x + 2y + z = 10
+x + 4y - z = 5
+3x + y + 2z = 8
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+Dari persamaan (2):
+x + 4y − z = 5  ⟹ z = x + 4y − 5 (4)
+
+<b>Pertama: Substitusi z dari (4) ke (1):</b>
+5x + 2y + (x + 4y − 5) = 10
+6x + 6y = 15  ⟹ x + y = 2.5 (5)
+                                
+<b>Kedua: Substitusi z dari (4) ke (3):</b>
+3x + y + 2 (x + 4y − 5) = 8
+3x + y + 2x + 8y − 10 = 8
+5x + 9y = 18 (6)
+
+Dari (5) dan (6):
+<b>Ketiga: Substitusi y = 2.5 − x dari (5) ke (6):</b>
+5 x + 9 (2.5 − x) = 18
+5x + 22.5 − 9x = 18
+−4x = −4.5  ⟹ x = 1.125
+
+<b>Keempat: Substitusi x = 1.125 ke (5):</b>
+1.125 + y = 2.5  ⟹ y = 1.375
+
+<b>Substitusi x dan y ke (4):</b>
+z = x + 4y − 5 = 1.125 + 4 (1.375) − 5 = 1.625
+                                
+<b>Hasil Akhir:</b>
+x = 1.125, y = 1.375, z = 1.625
+                            </pre>
+                        </div>
+                    </div>
+    
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                        <pre>
+2x + 4y - 3z = 6
+3x + y + z = 7
+x + 2y + 4z = 8
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Pembahasan:</strong></p>
+                        <pre>
+Representasikan dalam bentuk matriks:
+| 2  4 -3 |   | x |   | 6 |
+| 3  1  1 | x | y |   | 7 |
+| 1  2  4 |   | z |   | 8 |
+
+Buat elemen pertama baris pertama (pivot) menjadi 1 dengan membagi baris pertama oleh 2:
+| 1  2 -1.5 |   | x |   | 3 |
+| 3  1  1   | x | y |   | 7 |
+| 1  2  4   |   | z |   | 8 |
+
+Eliminasi elemen di bawah pivot:
+Baris 2: Baris 2−3×Baris 1Baris 3: Baris 3−Baris 1
+Hasil:
+| 1  2 -1.5 |   | x |   | 3 |
+| 0 -5  5.5 | x | y |   | -2 |
+| 0  0  5.5 |   | z |   | 5 |
+
+Ubah pivot berikutnya menjadi 1:
+Baris 2: Baris 2 ÷ −5 Baris 3: Baris 3 ÷ 5.5
+Hasil:
+| 1  2 -1.5 |   | x |   | 3 |
+| 0  1 -1.1 | x | y |   | 0.4 |
+| 0  0  1   |   | z |   | 0.91 |
+
+Dari Baris 3: z = 0.91  Dari Baris 2: y − 1.1 z = 0.4  ⟹ y = 0.4 + 1.1 (0.91) = 1.41 Dari Baris 1: x + 2y − 1.5z = 3  ⟹ x = 3 − 2 (1.41) + 1.5 (0.91) = 0.84
+
+Jawaban:
+x = 0.84, y = 1.41, z = 0.91         
+                        </pre>
+                    </div>
+                </div>   
+                
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                        <pre>
+x + 5y + z = 9
+4x + 2y - z = 5
+2x + 3y + z = 7
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Pembahasan:</strong></p>
+                        <pre>
+Representasikan dalam bentuk matriks:
+| 1  5  1 |   | x |   | 9 |
+| 4  2 -1 | x | y |   | 5 |
+| 2  3  1 |   | z |   | 7 |
+
+<b>Pertama: Buat elemen pertama baris pertama menjadi 1 (sudah dilakukan). Eliminasi elemen di bawah pivot:
+Baris 2: Baris 2 − 4 × Baris 1Baris 3: Baris 3 − 2 × Baris 1</b>
+Hasil:
+| 1  5   1|   | x |   | 9 |
+| 0 -18 -5| x | y |   |-31|
+| 0 -7  -1|   | z |   |-11|
+ 
+<b>Kedua: Ubah pivot kedua menjadi 1 dengan membagi baris kedua oleh -18:
+Baris 2: Baris 2 ÷ −18</b>
+Hasil:
+| 1  5    1|   | x |   | 9 |
+| 0  1 0.28| x | y |   |1.72|
+| 0 -7   -1|   | z |   |-11|
+
+<b>Ketiga: Eliminasi elemen di bawah pivot:
+Baris 3: Baris 3 + 7 × Baris 2</b>
+Hasil:
+| 1  5    1|   | x |   | 9 |
+| 0  1 0.28| x | y |   |1.72|
+| 0  0    1|   | z |   |1.04|
+
+Dari Baris 3: z = 1.04 Dari Baris 2: y + 0.28 z = 1.72  ⟹ y = 1.72 − 0.28 (1.04) = 1.43 Dari Baris 1: x + 5y + z = 9  ⟹ x = 9 − 5 (1.43) − 1.04 = 1.81
+
+Jawaban:
+x = 1.81, y = 1.43, z = 1.04
+
+                        </pre>
+                    </div>
+                </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                        <pre>
+x - y + z = 3
+2x + y - z = 5
+x + 2y + 3z = 12
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Pembahasan:</strong></p>
+                        <pre>
+Representasikan dalam bentuk matriks:
+| 1 -1  1 |   | x |   | 3 |
+| 2  1 -1 | x | y |   | 5 |
+| 1  2  3 |   | z |   | 12 |
+
+<b>Pertama: Eliminasi elemen di bawah pivot:</b>
+Baris 2: Baris 2 − 2 × Baris 1 Baris 3: Baris 3 − Baris 1
+Hasil:
+| 1  -1  1 |   | x |   | 3 |
+| 0  3  -3 | x | y |   | -1|
+| 0  3  2  |   | z |   | 9 |
+
+<b>Kedua: Eliminasi elemen di bawah pivot:</b>
+Baris 3: Baris 3−Baris 2
+Hasil:
+|1  -1  1 |   | x |   | 3 |
+|0  3  -3 | x | y |   |-1 |
+|0  0  5  |   | z |   |10 |
+
+Dari Baris 3: z = 10/5 = 2 Dari Baris 2: 3y − 3z = −1  ⟹ y = (−1 + 3(2))/3 = 1 Dari Baris 1: x − y + z = 3  ⟹ x = 3 + 1 −2 = 2
+
+Jawaban:
+x = 2, y = 1, z = 2
+                        </pre>
+                    </div>
+                </div>
+           
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:s</p>
+                    <pre>
+x + 2y - z = 6
+2x - y + 3z = 14
+3x + y + z = 10
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Pembahasan:</strong></p>
+                    <pre>
+Representasi dalam Matriks:
+|1  2  -1 |   | x |   | 6 |
+|2  -1  3 |   | y |   | 14|
+|3  1   1 |   | z |   | 10|
+
+Langkah Penyelesaian:
+                        
+<b>Pertama: Eliminasi elemen di bawah pivot:</b>
+Baris 2: Baris 2 − 2 × Baris 1, Baris 3: Baris 3 − 3 × Baris 1
+Hasil:
+|1  2  -1 |   | x |   | 6 |
+|0  -5  5 |   | y |   | 2 |
+|0  -5  4 |   | z |   |-8 |
+
+Eliminasi elemen di bawah pivot:
+Baris 3: Baris 3 − Baris 2
+Hasil:
+                   
+|1  2  -1 |   | x |   | 6 |
+|0  -5  5 |   | y |   | 2 |
+|0  0  -1 |   | z |   |-10|
+ 
+   -10           2 - 5(10)
+z= --- = 10, y = --------- = 10,    x = 6 - 2(10) + 10 = -4
+   -1              -5         
+    
+Jawaban:
+X = −4, Y = 10, Z = 10
+                        
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                    <pre>
+2x - 3y + z = 1
+x  + y - 4z = -2
+3x - y  - 2z = 8
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Pembahasan:</strong></p>
+                    <pre>
+Representasi dalam Matriks:
+|2 -3  1 |   | x |   | 1 |
+|1  1 -4 |   | y |   | -2|
+|3 -1 -2 |   | z |   | 8|
+
+<b>Pertama: Eliminasi elemen di bawah pivot:
+Baris 2: Baris 2 − 0.5 × Baris 1, Baris 3: Baris 3 − 1.5 × Baris 1</b>Hasil:
+|2  -3    1 |   | x |   |  1 |
+|0  2.5 -4.5|   | y |   |-2.5|
+|0  3.5  0.5|   | z |   | 6.5|
+
+<b>Kedua: Eliminasi elemen di bawah pivot kedua: 
+                 (3.5          )
+Baris 3: Baris 3−(--- x Baris 2)
+                 (2.5          )</b>
+
+Hasil:
+|2  -3   1 |   | x |   |  1 |
+|0 2.5 -4.5|   | y |   |-2.5|
+|0   0  7.8|   | Z |   |10.1|
+
+    10.1
+<b>z</b> = ---- = 1.29
+     7.8
+
+   -2.5-(-4.5 x 1.29)  -2.5 + 5.805   3.305
+<b>y</b> = ----------------- = ----------- = ----- = <b>1.32</b>
+           2.5               2.5        2.5
+
+    1 − (−3 × 1.32) + (1.29)   1 + 3.96 + 1.29   6.25
+<b>x</b> = ------------------------ = --------------- = ---- = <b>3.12</b>
+               2                      2           2
+​
+Jawaban Akhir:
+x ≈ 3.12, y ≈ 1.32, z ≈ 1.29
+
+                    </pre>
+                </div>
+            </div>     
+
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:s</p>
+                    <pre>
+x + 2y + z  = 7
+3x - y + 4z = 10
+2x + 3y - z = 5
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Pembahasan:</strong></p>
+                    <pre>
+Representasi matriks
+ |1  2  1 |   | x |  | 7 |
+ |3 -1  4 |   | y |  |10 |
+ |2  3 -1 |   | z |  |5 |
+
+<b>Pertama: Eliminasi elemen di bawah pivot pertama:
+Baris 2: Baris 2 − 3 × Baris 1, Baris 3: Baris 3 − 2 × Baris 1</b>
+ Hasil:
+ | 1  2  1 |   | x |   | 7 |
+ | 0 -7  1 |   | y |   |-11|
+ | 0 -1 -3 |   | z |   |-9 |
+ 
+<b>Kedua: Eliminasi elemen di bawah pivot kedua:
+                  -1
+ Baris 3: Baris 3 --- x Baris 2
+                  −7</b>
+
+ Hasil:
+ | 1  2  1  |   | x |   | 7 |
+ | 0 -7  1  |   | y |   |-11|
+ |0 0 -3.142|   | z |   |-10.57|
+
+    -10.57
+<b>z</b> = ------ = <b>3.36</b>
+    -3.142
+
+    -11 -(1 x 3.36)  -11 - 3.36
+<b>y</b> = --------------- = --------- = <b>2.05</b> 
+          -7             -7
+
+<b>x</b> = 7 − (2 × 2.05) − 3.36 ≈ 7 − 4.1 − 3.36 ≈ <b>-0.46</b>
+ 
+ x ≈ −0.46, y ≈ 2.05, z ≈ 3.36
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Ada suatu sistem persamaan linier, persamaannya Sbg berikut:</p>
+                    <pre>
+4x - 3y + z = 2
+x + y - 2z  = 6
+2x - y + 3z = 5
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Pembahasan:</strong></p>
+                    <pre>
+Representasi matriks
+| 4 -3  1 |   | x |   | 2 |
+| 1  1 -2 |   | y |   | 6 |
+| 2 -1  3 |   | z |   | 5 |
+
+<b>Pertama: Eliminasi elemen di bawah pivot pertama:
+                   1                               2
+Baris 2: Baris 2 - - x Baris 1, Baris 3: Baris 3 - - x Baris 1
+                   4</b>                               4
+  | 4 -3  1 |     | x |   | 2 |
+|0  2.25 -2.25|   | y |   |5.5|
+|0  0.5  2.5 |    | z |   | 3 |
+ 
+<b>Kedua: Eliminasi elemen di bawah pivot kedua:
+Baris 3: Baris 3</b>
+                   0.5
+Baris 3: Baris 3− ---- x Baris 2
+                  2.25
+
+Hasil:
+  | 4 -3  1 |   | x |   | 2 |
+|0  2.25 -2.25| | y |   |5.5|
+  |0 0 2.883|   | z |   |4.223|
+
+    4.223
+<b>z</b> = ----- = <b>1.46</b>
+    2.883
+
+    5.5 - (-2.25) × 1.46) 
+<b>y</b> = --------------------- = <b>3.0</b>
+           2.25
+
+    2 + 3(3.0) - (1.46)
+<b>x</b> = ------------------ = <b>2.64</b>
+            4
+
+x ≈ 2.64, y ≈ 3.0, z ≈ 1.46
+                    </pre>
+                </div>
+            </div>     
+
+                </div> </div>
+            </section></section>
+            </section>        
+            </section>
+    
+            <section id="invers" class="hidden">
+                <h2>Invers Matriks</h2>
+                <section class="video-section">
+                    <h3>Materi Video</h3>
+                    <div class="video-container">
+                        <video width="640" height="360" controls>
+                            <source src="Invers.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="determinan.mp4">di sini</a>.
+                        </video>
+                    </div>
+                    <p>Invers matriks itu gampangnya adalah "kebalikan" dari suatu matriks. Kalau kamu punya matriks A, terus dikalikan sama invers-nya (A<sup>−1</sup>), hasilnya bakal jadi matriks identitas <b>I</b> (matriks yang ada angka 1 di diagonal utamanya dan 0 di sisanya).</p>
+                    <b>Cara Hitung Invers Matriks</b>
+                        <ul>1. Hitung determinannya dulu. Ini kayak nilai "pengaruh" dari matriks itu. Kalau determinannya 0, nggak ada inversnya alias matriksnya singular.</ul>
+                        <ul>2. Gunakan determinan buat hitung kofaktor. Di matriks 2x2, ini lebih simpel karena udah ada rumus cepatnya: tukar elemen diagonal utama, lalu ubah tanda elemen diagonal kedua.</ul>
+                        <ul>3. Bagi setiap elemen dengan determinan. Nah, ini dia yang bikin jadi invers.</ul>
+                <a href="Invers.pdf">Sumber Materi</a>
+                    </section>
+                <section class="sample-problem">
+                    <h3>Contoh Soal</h3>
+                    <div class="problem-container">
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>1. Tentukan invers dari:</p>
+                                <pre>
+<b>A<sup>-1</sup></b> = |1  0| 
+      |0  1| 
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Jawaban:</strong></p>
+                                <pre>
+A<sup>-1</sup>= |1  0| 
+     |0  1| (karena matriks identitas)
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>2. Tentukan invers dari:</p>
+                                <pre>
+<b>B</b>= |7  -5|
+   |3  -2|
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Jawaban:</strong></p>
+                                <pre>
+|B| = (7 x -2) - (3 x -5) = -14 + 15 = 1
+B<sup>-1</sup> = | -2  5|
+      |-3  7|
+                                </pre>
+                            </div>
+                        </div>
+                       
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>3. Tentukan invers dari:</p>
+                            <pre>
+<b>C</b> = | -1  2 |
+    | 3  -4 |
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+|C| = ( -1 x -4 - 3 x 2 ) = 4 - 6 = -2
+C<sup>-1</sup> = <u>1</u>| -4  -2 |  
+     -2| -3  -1 |    
+                                          
+                </pre>
+                        </div>
+                    </div>
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>4. Tentukan invers dari:</p>
+                            <pre>
+<b>D</b> = |2  -1|
+    |-3  5|
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+|D| = (2 x 5) - (-3 x -1) = 10 - 3 = 7
+D<sup>-1</sup> = <u>1</u> |5  1|
+      7 |3  2|
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>5. carilah E<sup>-1</sup></p>
+                            <pre>
+<b>E</b> = | 1  2 |
+    | 3  4 | 
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Jawaban:</strong></p>
+                            <pre>
+|E| = (1 x 4) - (3 x 2) = 4 - 6 = -2
+E<sup>-1</sup> = | 4  -2| = | -2  1|
+      |-3  1|   |1.5 -0.5|
+                
+                            </pre>
+                        </div>
+                    </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>6. Hitung invers dari:</p>
+                        <pre>
+<b>F</b> = | 5  3 |
+    | 2  1 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+|F| = (5 x 1) - (2 x 3) = 5 - 6 = -1
+F<sup>-1</sup> = <u>1</u> | 1  -3|  = | -1  3|
+        |-2  5|     | 2 -5|
+
+                        </pre>
+                    </div>
+                </div>   
+                
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>7. Hitung invers dari:</p>
+                        <pre>
+<b>G</b> = | 3 -2 |
+    | -1  4 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+|G| = (3 x 4) - (1 x -2) = 12 - 2 = 10
+G<sup>-1</sup> = <u>1</u>| 4  2| 
+     10| 1  3|
+                        </pre>
+                    </div>
+                </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>8. Hitung invers dari:</p>
+                        <pre>
+<b>H</b> = | 2  5 |
+    | 7  8 |
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Jawaban:</strong></p>
+                        <pre>
+H = (2 x 8) - (7 x 5) = 16 - 35 = -19
+H<sup>-1</sup> = | -8  5| 
+      |7  -2|    
+                        </pre>
+                    </div>
+                </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>9. Carilah invers Matriks</p>
+                    <pre>
+<b>I</b> = | 4  7 |
+    | 2  6 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+|I| = (4 x 6) - (2 x 7) = 24 - 14 = 10
+I<sup>-1</sup> = <u>1</u> | 6  -7| 
+     10 |-2  4|
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>10. Hitung invers dari:</p>
+                    <pre>
+<b>J</b> = | 1  1 |
+    | 3  2 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+J = (1 x 2) - (3 x 1) = 2 - 3 = -1
+J<sup>-1</sup> = <u>1</u>| 2  -1| = | -2  1|
+     -1|-3  1|    | 3  -1|
+                    </pre>
+                </div>
+            </div>        <!-- Repeat this structure 14 more times with different problems -->
+                  
+            <div class="problem-box">
+                <div class="problem">
+                    <p>11. Tentukan apakah matriks ini memiliki Invers?</p>
+                    <pre>
+<b>K</b> = | 1  2 |
+    | 2  4 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+|K| = (1 x 4) - (2 x 2) = 4 - 4 = 0
+Karena B = 0, maka matriks ini tidak memiliki invers.
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>12. Hitung invers dari:</p>
+                    <pre>
+<b>L</b> = | 2  3 |
+    | 1  4 |
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Jawaban:</strong></p>
+                    <pre>
+L = (2 x 4) - (1 x 3) = 8 - 3 = 5
+L<sup>-1</sup> = <u>1</u> | 4  -3| 
+        5 |1  2|
+                    </pre>
+                </div>
+            </div> 
+            <!-- Problem 2-15 structure similar to above -->
+                </div> </div>
+            </section></section>
+            </section>        
+
+            <section id="grafik" class="hidden"> 
+                <h2>Komputer Grafik</h2>
+                <section class="video-section">
+                    <h3>Materi Video</h3>
+                    <div class="video-container">
+                        <video width="640" height="360" controls>
+                            <source src="Komputer grafik.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="matriks.mp4">di sini</a>.
+                        </video>
+                    </div> 
+                    <p>Dalam komputer grafik, matriks digunakan untuk transformasi gambar, seperti:</p>
+                                  <ul>  Translasi : Memindahkan posisi gambar ke tempat lain. <a href="Komputer Grafik - Translasi.pdf">Sumber Materi</a></ul>
+                                  <ul>  Scaling   : Mengubah ukuran gambar, bisa diperbesar atau diperkecil. <a href="Komputer Grafik_Scaling.pdf">Sumber Materi</a></ul>
+                                  <ul>  Reflection: Membalik gambar terhadap suatu sumbu. <a href="Komputer Grafik_Reflection.pdf">Sumber Materi</a></ul>
+                                  <ul>  Rotation  : Memutar gambar dengan sudut tertentu. <a href="Komputer Grafik-Rotation.pdf">Sumber Materi</a></ul>
+                </section>
+                <section class="sample-problem">
+                    <h3>Contoh Soal(Translasi, Scalling, Reflection, Rotation)</h3>
+                    <div class="grafik-container">
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>Contoh 1 Translasi (geser kanan/kiri)</p>
+                                <pre>
+<img src="1 TRANSLASI.png" alt="segitiga">
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Geser ke kanan dan ke atas:</strong></p>
+                                <pre>
+Koordinat Awal: A(1, 1), B(4, 1), C(4, 5)
+Translasi: Geser titik sejauh t<sub>x</sub>= 3 ke kanan dan t<sub>y</sub>= ke atas.
+Hasil Titik: D'(4, 3), E'(7, 3), F'(7, 7).
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>Contoh 1 Scaling (pengecilan/pembesaran)</p>
+                                <pre>
+                                    <img src="1 Scaling.png" alt="segitiga">
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Pembesaran seragam:</strong></p>
+                                <pre>
+Koordinat Awal: A(1, 2), B(3, 2), C(3, 5)
+Scaling:Faktor s <sub>x</sub>= 2, s<sub>y</sub>= 2
+Hasil Titik: D'(2, 4), E'(6, 4), F'(6, 10).
+                                </pre>
+                            </div>
+                        </div>         
+    
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Contoh 1 Refleksi</p>
+                            <pre>
+                                <img src="1 REFLEKSI.png" alt="segitiga">
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Refleksi terhadap sumbu X:</strong></p>
+                            <pre>
+Koordinat Awal: A(1, 0), B(3, 1), C(2, 3)
+Reflection: Cerminkan terhadap sumbu x.
+Hasil Titik: D'(1, 0), E'(3, -1), F'(2, -3).
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Contoh 1 Rotasi</p>
+                            <pre>
+                                <img src="1 ROTASI.png" alt="segitiga">
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Rotasi 90<sup>∘</sup> berlawanan arah jarum jam:</strong></p>
+                            <pre>
+Koordinat Awal: A(2, 1), B(5, 1), C(5, 4)
+Rotation: Putar sebesar 90<sup>∘</sup> berlawanan arah jarum jam dengan pusat (0, 0).
+Hasil Titik: D'(-1, 2), E'(-1, 5), F'(-4, 5).
+                            </pre>
+                        </div>
+                    </div>
+            
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Contoh 2 Translasi (geser kanan/kiri) </p>
+                            <pre>
+                                <img src="2 TRANSLASI.png" alt="segitiga">
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Geser ke kiri dan ke bawah:</strong></p>
+                            <pre>
+Koordinat Awal: A(6, 8), B(9, 8), C(9, 11)
+Translasi: Geser titik sejauh t<sub>x</sub> = −4 ke kiri dan t <sub>y</sub> = 3 ke bawah.
+Hasil Titik: D'(2, 5), E'(5, 5), F'(5, 8). 
+                            </pre>
+                        </div>
+                    </div>
+    
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Contoh 2 Scaling (pengecilan/pembesaran)</p>
+                        <pre>
+                            <img src="2 SCALING.png" alt="segitiga">
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Pembesaran pada X:</strong></p>
+                        <pre>
+Koordinat Awal: A(2, 1), B(5, 1), C(5, 4)
+Scaling:Faktor s <sub>x</sub>= 3, s<sub>y</sub>= 1
+Hasil Titik: D'(6, 1), E'(15, 1), F'(15, 4).     
+                        </pre>
+                    </div>
+                </div>   
+                
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Contoh 2 Refleksi</p>
+                        <pre>
+                            <img src="2 REFLEKSI.png" alt="segitiga">
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>Refleksi terhadap sumbu y:</strong></p>
+                        <pre>
+Koordinat Awal: A(3, 5), B(6, 5), C(6, 8)
+Reflection: Cerminkan terhadap sumbu y
+Hasil Titik: D'(-3, 5), E'(-6, 5), F'(-6, 8). 
+                        </pre>
+                    </div>
+                </div>
+        
+                <div class="problem-box">
+                    <div class="problem">
+                        <p>Contoh 2 Rotasi</p>
+                        <pre>
+                            <img src="2 ROTASI.png" alt="segitiga">
+                        </pre>
+                    </div>
+                    <div class="solution">
+                        <p><strong>ROTASI 180<sup>∘</sup>:</strong></p>
+Koordinat Awal: A(3, 2), B(4, 2), C(4, 6)
+Rotation: Putar sebesar 180<sup>∘</sup> dengan pusat (0, 0).
+Hasil Titik: D'(-3, -2), E'(-4, -2), F'(-4, -6).
+                        </pre>
+                    </div>
+                </div>
+           
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Contoh 3 Translasi (geser atas/bawah)</p>
+                    <pre>
+                        <img src="3 TRANSLASI.png" alt="segitiga"></p>
+                        </pre>
+                        </div>
+                    <div class="solution">
+                        <p><strong>Translasi di sumbu y saja:</strong></p>
+                    <pre>
+Koordinat Awal: A(2, 3), B(4, 3), C(4, 6)
+Translasi: Geser titik sejauh t<sub>2</sub>= 0 t<sub>y</sub>= 5 ke atas
+Hasil Titik: D'(2, 8), E'(4, 8), F'(4, 11).
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Contoh 3 Scaling (pengecilan/pembesaran)</p>
+                    <pre>
+                        <img src="3 SCALING.png" alt="segitiga">
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Pengecilan hanya pada y:</strong></p>
+                    <pre>
+Koordinat Awal: A(4, 8), B(7, 8), C(7, 12)
+Scaling: Faktor s<sup>x</sup> = 1 dan s<sup>y</sup> = 0,5
+Hasil Titik: D'(4, 4), E'(7, 4), F'(7, 6).
+                    </pre>
+                </div>
+            </div>       
+            
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Contoh 3 Refleksi</p>
+                    <pre>
+                        <img src="3 REFLEKSI.png" alt="segitiga">
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Refleksi terhadap garis y = x:</strong></p>
+                    <pre>
+Koordinat Awal: A(4, 1), B(6, 2), C(7, 3)
+Reflection: Cerminkan terhadap garis y=x.
+Hasil Titik: D'(1, 4), E'(2, 6), F'(3, 7). 
+                    </pre>
+                </div>
+            </div>
+    
+            <div class="problem-box">
+                <div class="problem">
+                    <p>Contoh 3 Rotasi</p>
+                    <pre>
+                        <img src="3 ROTASI.png" alt="segitiga">
+                    </pre>
+                </div>
+                <div class="solution">
+                    <p><strong>Rotasi 270<sup>∘</sup> searah jarum jam:</strong></p>
+                    <pre>
+Koordinat Awal: A(1, 2), B(5, 2), C(5, 6)
+Rotation: Putar sebesar 270<sup>∘</sup> searah jarum jam dengan pusat (0, 0).
+Hasil Titik: D'(-2, 1), E'(-2, 5), F'(-6, 5).
+                    </pre>
+                </div>
+            </div>  <!-- Repeat this structure 14 more times with different problems -->
+                    <!-- Problem 2-15 structure similar to above -->
+                </div> </div>
+            </section></section>
+            </section>        
+    
+            <section id="kriptografi" class="hidden">
+                <h2>Kriptografi</h2>
+                <section class="video-section">
+                    <h3>Materi Video</h3>
+                    <div class="video-container">
+                        <video width="640" height="360" controls>
+                            <source src="kriptografi.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video tag. Anda bisa mengunduh video <a href="determinan.mp4">di sini</a>.
+                        </video>
+                    </div>
+                    <p>Kriptografi adalah ilmu untuk menyandikan pesan agar lebih aman. Berikut istilah-istilah yang sering digunakan:</p>
+                </section>
+                <section class="explanation">
+                    <p><ul>Plaintext (P): Isi pesan asli yang ingin dikirim.</ul>
+                        <ul>Ciphertext (C): Hasil enkripsi dari plaintext, berupa teks yang tidak bisa langsung dimengerti.</ul>
+                        <ul>Enkripsi (fungsi E): Proses mengubah plaintext menjadi ciphertext.</ul>
+                        <ul>Dekripsi (fungsi D): Proses mengembalikan ciphertext menjadi plaintext asli.</ul>
+                        <ul>Kunci: Bilangan rahasia yang dipakai untuk enkripsi dan dekripsi.</ul></p>
+                        Contoh Proses:
+                        
+                        <ul>zara punya pesan <i><b>𝑃</b></i>, lalu lakukan enkripsi <i><b>E(P)</b></i> menggunakan kunci, hasilnya <b><i>C</i></b>.</ul>
+                        Saat pesan diterima, lakukan dekripsi <i><b>D(C)</b></i> menggunakan kunci yang sama untuk mendapatkan kembali <b><i>P</i></b>
+                </section>
+                <a href="Kriptografi.pdf">Sumber materi</a>
+<pre>
+A|B|C|D|E|F|G|H|I|J|K |L |M |N |O |P |Q |R |S |T |U |V |W |X |Y |Z    matriks kunci = | 2 1 | //bekas contoh MK di 
+0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25                   | 3 4 |   tulis kelas
+</pre>
+                <section class="sample-problem">
+                    <h3>Contoh Kalimat yg Terenkripsi dan Terdekripsi</h3>
+                    <div class="problem-container">
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>HALO > "OUKL"</p>
+                                <pre>
+H=7, A=0                                     L=11, O=14
+
+| 2  1 | |7|(2x7)+(1x0)  |14| mod 26 = 14 <b>O</b>   | 2  1 |   |11|(2x11)+(1x14)  |36| mod 26 = 10 <b>K</b>
+        x              =  --                           x                  =  --
+| 3  4 | |0|(3x7)+(4x0)  |21| mod 26 = 21 <b>U</b>   | 3  4 |   |14|(3x11)+(4x14)  |89| mod 26 = 11 <b>L</b>
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Verifikasi dengan Deskripsi:</strong></p>
+                                <pre>          
+Matriks kunci = | 2 1 |  det: 2 x 4 - 1 x 3 = 8 - 3 = <b>5</b>
+                | 3 4 |  Invers determinan 5 mod 26 = 21 (karena 5 ⋅ 21 ≡ 1 mod 26). 
+
+Invers M k = <u>1</u>. | 4 -1 | mod 26 = | 4  25 |
+            det |-3  2 |          | 23  2 |
+
+<b>gunakan hasil Ciphertext (KL)</b>
+|4  25 |  |10|  | 4x10 + 25x11 |  | 40 + 275 |  | 315 mod 26 = <b>7</b> H |
+        x     =                 =             =
+|23  2 |  |11|  | 23x10 + 2x11 |  | 230 + 22 |  | 252 mod 26 = <b>0</b> A |
+
+<b>gunakan hasil Ciphertext (OU)</b>
+|23  2 |  |21|  | 23x14 + 2x21 |  | 322 + 42 |  | 364 mod 26 = <b>11</b> L |
+        x     =                 =             = 
+| 4 25 |  |14|  | 4x14 + 25x21 |  | 56 + 525 |  | 581 mod 26 = <b>14</b> O |
+                                </pre>
+                            </div>
+                        </div>
+                
+                        <div class="problem-box">
+                            <div class="problem">
+                                <p>BU > "WF"</p>
+                                <pre>
+B=1, U=20
+| 2  1 | |1|(2x1)+(1x20)  |22| mod 26 = 22 <b>W</b>
+        x               =  --
+| 3  4 | |20|(3x1)+(4x20) |83| mod 26 = 5 <b>F</b>                                     
+                                </pre>
+                            </div>
+                            <div class="solution">
+                                <p><strong>Verifikasi dengan Deskripsi:</strong></p>
+                                <pre>
+matriks kunci = | 2 1 |  det: 2 x 4 - 1 x 3 = 8 - 3 = <b>5</b>
+                | 3 4 |  Invers determinan 5 mod 26 = 21  
+
+Invers M k = <u>1</u>. | 4 -1 | mod 26 = | 4  25 |
+            det |-3  2 |          | 23  2 |
+
+<b>gunakan hasil Ciphertext (WF)</b>
+|23  2 |  |22| | 23x5 + 2x6 |  | 115 + 12 |  | 127 mod 26 = <b>1</b> B |
+        x     =              =             =
+|4  25 |  |5|  | 4x5 + 25x6 |  | 20 + 150 |  | 170 mod 26 = <b>20</b> U |
+                                </pre>
+                            </div>
+                        </div>
+                       
+                    <div class="problem-box">
+                        <div class="problem">
+                            <p>Yulis > "QUERCG"</p>
+                            <pre>
+<b>Y=24 U=20</b>                                        <b>L=11, I=8,</b>                                   <b>S=18 X=1</b>
+| 2  1 | |24| (2x24)+(1x20)   68 mod 26 = 16 <b>Q</b>  | 2  1 | |11| (2x11)+(1x8)  30 mod 26 = 4 <b>E</b>  | 2  1 | |18| (2x18)+(1x18)  54 mod 26 = 2 <b>C</b>
+        x    =             =  --                             x             =                                            = --                          
+| 3  4 | |20| (3x24)+(4x20)  152 mod 26 = 20 <b>U</b>  | 3  4 | |8|  (3x11)+(4x8)  43 mod 26 = 17 <b>R</b> | 3  4 | |1|  (3x18)+(4x1)   58 mod 26 = 6 <b>G</b>
+                                </pre>
+                            </pre>
+                        </div>
+                        <div class="solution">
+                            <p><strong>Verifikasi dengan Deskripsi:</strong></p>
+                            <pre>
+matriks kunci = | 2 1 |  det: 2 x 4 - 1 x 3 = 8 - 3 = <b>5</b>
+                | 3 4 |  Invers determinan 5 mod 26 = 21
+
+Invers M k = <u>1</u>. | 4 -1 | mod 26 = | 4  25 |
+            det |-3  2 |          | 23  2 |
+
+<b>gunakan hasil Ciphertext (QUERCG)</b>
+|23  2 |  |16| | 23x16 + 2x24 |  | 368 + 48 |  | 416 mod 26 = <b>24</b> Y |
+        x     =                =             =
+|4  25 |  |20| | 4x20 + 25x20 |  | 80 + 500 |  | 580 mod 26 = <b>20</b> U |
+        x     =                =             =
+|23  2 |  |4 | | 23x4 + 2x11  |  | 92 + 22  |  | 114 mod 26 = <b>11</b> L |
+        x     =                =             =
+|4  25 |  |17| | 4x17 + 25x8  |  | 68 + 200 |  | 268 mod 26 = <b>8</b> I |
+        x     =                =             =  
+|23  2 |  |2 | | 23x2 + 2x18  |  | 46 + 36  |  | 82 mod 26 = <b>18</b> S |
+                            </pre>
+                        </div>
+                    </div>
+                          <!-- Repeat this structure 14 more times with different problems -->
+                    <!-- Problem 2-15 structure similar to above -->
+                </div> </div>
+            </section></section>
+            </section>        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AZZAHRA | 2024807043 | Mahasiswi Software Engineering SMT 1 Universitas Insan Pembangunan Indonesia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,402 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    padding-bottom: 60px;
+}
+
+/* Header styles */
+header {
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #343a40;
+    padding: 1rem;
+    position: sticky; /* Ganti dari relative ke sticky */
+    top: 0; /* Menjaga navbar tetap di atas */
+    z-index: 100; /* Pastikan navbar berada di atas konten lainnya */
+    overflow-x: auto; /* Menambahkan scroll horizontal jika diperlukan */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* Menyediakan wrapping otomatis */
+    white-space: nowrap; /* Pastikan ul tidak mengubah lebar dan memaksa scroll */
+}
+
+nav li {
+    flex-shrink: 0; /* Pastikan li tidak menyusut */
+    margin: 0 0.5rem; /* Memberikan jarak antar item */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+nav a:hover, nav a.active {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Typography adjustments for mobile */
+@media (max-width: 767px) {
+    nav a {
+        font-size: 0.85rem; /* Mengurangi ukuran font untuk layar kecil */
+        padding: 0.4rem 0.7rem; /* Menyesuaikan padding untuk ruang lebih kecil */
+    }
+
+    nav ul {
+        width: 100%; /* Menghapus lebar tetap agar elemen menyesuaikan */
+        padding: 0; /* Menghapus padding yang tidak perlu */
+    }
+}
+
+/* Main content styles */
+main {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Video container styles */
+.video-container {
+    margin: 1rem -1rem;
+    background: #eee;
+    padding: 1rem;
+    border-radius: 0;
+}
+
+@media (min-width: 768px) {
+    .video-container {
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pre/code block styles */
+pre {
+    background: #f5f5f5;
+    padding: 0.8rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    margin: 1rem -0.5rem;
+}
+
+@media (min-width: 768px) {
+    pre {
+        margin: 1rem 0;
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+/* Visibility classes */
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+section {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+section.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Typography adjustments for mobile */
+@media (max-width: 767px) {
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .video-container {
+        box-shadow: none;
+    }
+}
+.problem-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.grafik-container {
+     display: grid;
+    grid-template-columns: repeat(4, minmax(400px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;   
+}
+.problem-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center; 
+}
+
+/* Problem box styling updates */
+.problem-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 400px; /* Fixed height */
+    overflow-y: auto; /* Vertical scroll */
+    overflow-x: auto; /* Horizontal scroll */
+}
+
+/* Pre/code block styles update */
+.problem-box pre {
+    white-space: pre;       /* Keep original formatting */
+    overflow-x: auto;       /* Horizontal scroll */
+    margin: 0;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Update problem container for better responsiveness */
+.problem-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(500px, 1fr));
+    gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Matrix specific styling */
+.matrix-content {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: monospace;
+    min-width: min-content;
+}
+
+/* Container for matrix equations */
+.matrix-equation {
+    display: block;
+    width: max-content; /* Take as much width as needed */
+    min-width: 100%; /* But at least full width of container */
+    padding: 10px 0;
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+}
+
+/* Ensure proper spacing in matrix multiplication steps */
+.matrix-steps {
+    font-family: monospace;
+    white-space: pre; /* Keeps original formatting */
+    display: inline-block; /* Prevents unnecessary width */
+    margin: 0; /* Removes default margins */
+}
+
+/* Container for each step of matrix calculation */
+.matrix-row {
+    display: block;
+    white-space: nowrap; /* Prevents wrapping within steps */
+    margin: 5px 0;
+}
+
+/* Style for matrix brackets and content */
+.matrix-content {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: monospace;
+    padding: 0 5px;
+}
+
+/* Matrix operation symbols */
+.matrix-operator {
+    padding: 0 8px;
+    display: inline-block;
+}
+
+/* Container for entire matrix problem */
+.matrix-problem {
+    min-width: min-content;
+    display: inline-block;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .problem-box {
+        margin: 0;
+        padding: 15px;
+    }
+    
+    .matrix-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .problem-container {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        width: 95%;
+    }
+    .grafik-container{
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .problem-container {
+        grid-template-columns: minmax(280px, 1fr);
+        width: 100%;
+    }
+    .grafik-container{
+        grid-template-columns: minmax(280px, 1fr);
+        width: 100%;
+    }
+}
+
+.problem, .solution {
+    margin-bottom: 1.5rem;
+}
+
+.problem pre, .solution pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+.problem-box:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Scrollbar styling */
+.problem-box::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.problem-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.problem-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.problem-box::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .problem-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .problem-box {
+        margin-bottom: 1rem;
+        padding: 15px;
+    }
+}
+.pdf-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 0;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+}
+
+.pdf-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+@media (max-width: 768px) {
+    .pdf-container {
+        padding-top: 100%; /* Square aspect ratio for mobile */
+    }
+}
